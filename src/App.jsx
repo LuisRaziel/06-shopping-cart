@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { Header } from './Components/Header'
 import { Filters } from './Components/Filters'
 
-function App() {
-  const [products] = useState(INITIAL_PRODCTS)
+function useFilters() {
   const [filters, setFilters] = useState({
     category: 'all',
     minPrice: 0,
@@ -19,6 +18,12 @@ function App() {
       )
     })
   }
+  return { filterProducts, setFilters }
+}
+
+function App() {
+  const [products] = useState(INITIAL_PRODCTS)
+  const { filterProducts, setFilters } = useFilters()
 
   const filteredProducts = filterProducts(products)
 
