@@ -1,9 +1,11 @@
-
-
+import { products} from './mocks/product.json'
+import { Products } from './Components/Products'
 function App() {
 
   return (
-    <h1>Shopping cart</h1>
+    <div className="App">
+      <Products products={products} />
+    </div>
   )
 }
 
