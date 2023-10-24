@@ -3,6 +3,7 @@ import { Products } from './Components/Products'
 import { useState } from 'react'
 import { Header } from './Components/Header'
 import { Filters } from './Components/Filters'
+import { Footer } from './Components/Footer'
 
 function useFilters() {
   const [filters, setFilters] = useState({
@@ -33,6 +34,7 @@ function App() {
         <Filters onChange={setFilters} />
       </Header>
       <Products products={filteredProducts} />
+      <Footer />
     </>
   )
 }
