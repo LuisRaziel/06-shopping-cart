@@ -2,6 +2,7 @@ import { products as INITIAL_PRODCTS } from './mocks/product.json'
 import { Products } from './Components/Products'
 import { useState } from 'react'
 import { Header } from './Components/Header'
+import { Filters } from './Components/Filters'
 
 function App() {
   const [products] = useState(INITIAL_PRODCTS)
@@ -23,7 +24,9 @@ function App() {
 
   return (
     <>
-      <Header onChangeFilters={setFilters}/>
+      <Header>
+        <Filters onChange={setFilters} />
+      </Header>
       <Products products={filteredProducts} />
     </>
   )
